@@ -2,6 +2,11 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankTransfer" nsURI="http://www.example.org/bankTransfer" nsPrefix="bankTransfer">
   <eClassifiers xsi:type="ecore:EClass" name="BankAccount">
+    <eOperations name="sendMoney">
+      <eParameters name="recipientIban" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="sum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="currency" eType="#//Currency"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iban" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accountBalance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
