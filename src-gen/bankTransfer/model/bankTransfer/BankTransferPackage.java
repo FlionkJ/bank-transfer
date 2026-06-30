@@ -123,13 +123,22 @@ public interface BankTransferPackage extends EPackage {
 	int BANK_ACCOUNT_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Send Money</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANK_ACCOUNT___SEND_MONEY__STRING_INT_CURRENCY = 0;
+
+	/**
 	 * The number of operations of the '<em>Bank Account</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BANK_ACCOUNT_OPERATION_COUNT = 0;
+	int BANK_ACCOUNT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.OwnerImpl <em>Owner</em>}' class.
@@ -308,6 +317,16 @@ public interface BankTransferPackage extends EPackage {
 	EAttribute getBankAccount_Currency();
 
 	/**
+	 * Returns the meta object for the '{@link bankTransfer.model.bankTransfer.BankAccount#sendMoney(java.lang.String, int, bankTransfer.model.bankTransfer.Currency) <em>Send Money</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Send Money</em>' operation.
+	 * @see bankTransfer.model.bankTransfer.BankAccount#sendMoney(java.lang.String, int, bankTransfer.model.bankTransfer.Currency)
+	 * @generated
+	 */
+	EOperation getBankAccount__SendMoney__String_int_Currency();
+
+	/**
 	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.Owner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -463,6 +482,15 @@ public interface BankTransferPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BANK_ACCOUNT__CURRENCY = eINSTANCE.getBankAccount_Currency();
+
+		/**
+		 * The meta object literal for the '<em><b>Send Money</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BANK_ACCOUNT___SEND_MONEY__STRING_INT_CURRENCY = eINSTANCE
+				.getBankAccount__SendMoney__String_int_Currency();
 
 		/**
 		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.OwnerImpl <em>Owner</em>}' class.

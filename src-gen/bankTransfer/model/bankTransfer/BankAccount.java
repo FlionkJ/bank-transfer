@@ -132,4 +132,12 @@ public interface BankAccount extends EObject {
 	 */
 	void setCurrency(Currency value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void sendMoney(String recipientIban, int sum, Currency currency);
+
 } // BankAccount

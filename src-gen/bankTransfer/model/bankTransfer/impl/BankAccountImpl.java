@@ -7,6 +7,8 @@ import bankTransfer.model.bankTransfer.BankTransferPackage;
 import bankTransfer.model.bankTransfer.Currency;
 import bankTransfer.model.bankTransfer.Owner;
 
+import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -264,6 +266,18 @@ public class BankAccountImpl extends MinimalEObjectImpl.Container implements Ban
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public void sendMoney(String recipientIban, int sum, Currency currency) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -386,6 +400,21 @@ public class BankAccountImpl extends MinimalEObjectImpl.Container implements Ban
 			return currency != CURRENCY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+		case BankTransferPackage.BANK_ACCOUNT___SEND_MONEY__STRING_INT_CURRENCY:
+			sendMoney((String) arguments.get(0), (Integer) arguments.get(1), (Currency) arguments.get(2));
+			return null;
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

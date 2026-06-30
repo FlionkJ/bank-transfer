@@ -183,6 +183,16 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
+	public EOperation getBankAccount__SendMoney__String_int_Currency() {
+		return bankAccountEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getOwner() {
 		return ownerEClass;
 	}
@@ -293,6 +303,7 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 		createEAttribute(bankAccountEClass, BANK_ACCOUNT__ACCOUNT_BALANCE);
 		createEReference(bankAccountEClass, BANK_ACCOUNT__OWNER);
 		createEAttribute(bankAccountEClass, BANK_ACCOUNT__CURRENCY);
+		createEOperation(bankAccountEClass, BANK_ACCOUNT___SEND_MONEY__STRING_INT_CURRENCY);
 
 		ownerEClass = createEClass(OWNER);
 		createEAttribute(ownerEClass, OWNER__NAME);
@@ -352,6 +363,12 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBankAccount_Currency(), this.getCurrency(), "currency", null, 0, 1, BankAccount.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getBankAccount__SendMoney__String_int_Currency(), null, "sendMoney", 0, 1,
+				IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "recipientIban", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "sum", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCurrency(), "currency", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(ownerEClass, Owner.class, "Owner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOwner_Name(), ecorePackage.getEString(), "name", null, 0, 1, Owner.class, !IS_TRANSIENT,
