@@ -22,22 +22,31 @@ public interface BankTransferFactory extends EFactory {
 	BankTransferFactory eINSTANCE = bankTransfer.model.bankTransfer.impl.BankTransferFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Konto</em>'.
+	 * Returns a new object of class '<em>Bank Account</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Konto</em>'.
+	 * @return a new object of class '<em>Bank Account</em>'.
 	 * @generated
 	 */
-	Konto createKonto();
+	BankAccount createBankAccount();
 
 	/**
-	 * Returns a new object of class '<em>Inhaber</em>'.
+	 * Returns a new object of class '<em>Owner</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Inhaber</em>'.
+	 * @return a new object of class '<em>Owner</em>'.
 	 * @generated
 	 */
-	Inhaber createInhaber();
+	Owner createOwner();
+
+	/**
+	 * Returns a new object of class '<em>Exchange Rate API</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exchange Rate API</em>'.
+	 * @generated
+	 */
+	ExchangeRateAPI createExchangeRateAPI();
 
 	/**
 	 * Returns the package supported by this factory.

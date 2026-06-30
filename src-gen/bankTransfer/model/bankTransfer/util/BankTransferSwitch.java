@@ -66,16 +66,23 @@ public class BankTransferSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case BankTransferPackage.KONTO: {
-			Konto konto = (Konto) theEObject;
-			T result = caseKonto(konto);
+		case BankTransferPackage.BANK_ACCOUNT: {
+			BankAccount bankAccount = (BankAccount) theEObject;
+			T result = caseBankAccount(bankAccount);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case BankTransferPackage.INHABER: {
-			Inhaber inhaber = (Inhaber) theEObject;
-			T result = caseInhaber(inhaber);
+		case BankTransferPackage.OWNER: {
+			Owner owner = (Owner) theEObject;
+			T result = caseOwner(owner);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BankTransferPackage.EXCHANGE_RATE_API: {
+			ExchangeRateAPI exchangeRateAPI = (ExchangeRateAPI) theEObject;
+			T result = caseExchangeRateAPI(exchangeRateAPI);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -86,32 +93,47 @@ public class BankTransferSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Konto</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Bank Account</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Konto</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Bank Account</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseKonto(Konto object) {
+	public T caseBankAccount(BankAccount object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Inhaber</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Owner</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Inhaber</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Owner</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInhaber(Inhaber object) {
+	public T caseOwner(Owner object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exchange Rate API</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exchange Rate API</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExchangeRateAPI(ExchangeRateAPI object) {
 		return null;
 	}
 

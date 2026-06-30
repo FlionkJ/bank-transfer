@@ -2,9 +2,9 @@
  */
 package bankTransfer.model.bankTransfer.impl;
 
+import bankTransfer.model.bankTransfer.BankAccount;
 import bankTransfer.model.bankTransfer.BankTransferPackage;
-import bankTransfer.model.bankTransfer.Inhaber;
-import bankTransfer.model.bankTransfer.Konto;
+import bankTransfer.model.bankTransfer.Owner;
 
 import java.util.Collection;
 
@@ -24,21 +24,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Inhaber</b></em>'.
+ * An implementation of the model object '<em><b>Owner</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.InhaberImpl#getName <em>Name</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.InhaberImpl#getAnschrift <em>Anschrift</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.InhaberImpl#getTelefonnummer <em>Telefonnummer</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.InhaberImpl#getKonto <em>Konto</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.OwnerImpl#getName <em>Name</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.OwnerImpl#getAdress <em>Adress</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.OwnerImpl#getPhoneNumber <em>Phone Number</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.OwnerImpl#getBankAccount <em>Bank Account</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber {
+public class OwnerImpl extends MinimalEObjectImpl.Container implements Owner {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,61 +60,61 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAnschrift() <em>Anschrift</em>}' attribute.
+	 * The default value of the '{@link #getAdress() <em>Adress</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnschrift()
+	 * @see #getAdress()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ANSCHRIFT_EDEFAULT = null;
+	protected static final String ADRESS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getAnschrift() <em>Anschrift</em>}' attribute.
+	 * The cached value of the '{@link #getAdress() <em>Adress</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnschrift()
+	 * @see #getAdress()
 	 * @generated
 	 * @ordered
 	 */
-	protected String anschrift = ANSCHRIFT_EDEFAULT;
+	protected String adress = ADRESS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTelefonnummer() <em>Telefonnummer</em>}' attribute.
+	 * The default value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTelefonnummer()
+	 * @see #getPhoneNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TELEFONNUMMER_EDEFAULT = 0;
+	protected static final int PHONE_NUMBER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getTelefonnummer() <em>Telefonnummer</em>}' attribute.
+	 * The cached value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTelefonnummer()
+	 * @see #getPhoneNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected int telefonnummer = TELEFONNUMMER_EDEFAULT;
+	protected int phoneNumber = PHONE_NUMBER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getKonto() <em>Konto</em>}' reference list.
+	 * The cached value of the '{@link #getBankAccount() <em>Bank Account</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKonto()
+	 * @see #getBankAccount()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Konto> konto;
+	protected EList<BankAccount> bankAccount;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InhaberImpl() {
+	protected OwnerImpl() {
 		super();
 	}
 
@@ -125,7 +125,7 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BankTransferPackage.Literals.INHABER;
+		return BankTransferPackage.Literals.OWNER;
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.INHABER__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.OWNER__NAME, oldName, name));
 	}
 
 	/**
@@ -157,8 +157,8 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	 * @generated
 	 */
 	@Override
-	public String getAnschrift() {
-		return anschrift;
+	public String getAdress() {
+		return adress;
 	}
 
 	/**
@@ -167,12 +167,12 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	 * @generated
 	 */
 	@Override
-	public void setAnschrift(String newAnschrift) {
-		String oldAnschrift = anschrift;
-		anschrift = newAnschrift;
+	public void setAdress(String newAdress) {
+		String oldAdress = adress;
+		adress = newAdress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.INHABER__ANSCHRIFT, oldAnschrift,
-					anschrift));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.OWNER__ADRESS, oldAdress,
+					adress));
 	}
 
 	/**
@@ -181,8 +181,8 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	 * @generated
 	 */
 	@Override
-	public int getTelefonnummer() {
-		return telefonnummer;
+	public int getPhoneNumber() {
+		return phoneNumber;
 	}
 
 	/**
@@ -191,12 +191,12 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	 * @generated
 	 */
 	@Override
-	public void setTelefonnummer(int newTelefonnummer) {
-		int oldTelefonnummer = telefonnummer;
-		telefonnummer = newTelefonnummer;
+	public void setPhoneNumber(int newPhoneNumber) {
+		int oldPhoneNumber = phoneNumber;
+		phoneNumber = newPhoneNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.INHABER__TELEFONNUMMER,
-					oldTelefonnummer, telefonnummer));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.OWNER__PHONE_NUMBER,
+					oldPhoneNumber, phoneNumber));
 	}
 
 	/**
@@ -205,12 +205,12 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	 * @generated
 	 */
 	@Override
-	public EList<Konto> getKonto() {
-		if (konto == null) {
-			konto = new EObjectWithInverseResolvingEList.ManyInverse<Konto>(Konto.class, this,
-					BankTransferPackage.INHABER__KONTO, BankTransferPackage.KONTO__INHABER);
+	public EList<BankAccount> getBankAccount() {
+		if (bankAccount == null) {
+			bankAccount = new EObjectWithInverseResolvingEList.ManyInverse<BankAccount>(BankAccount.class, this,
+					BankTransferPackage.OWNER__BANK_ACCOUNT, BankTransferPackage.BANK_ACCOUNT__OWNER);
 		}
-		return konto;
+		return bankAccount;
 	}
 
 	/**
@@ -222,8 +222,8 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BankTransferPackage.INHABER__KONTO:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getKonto()).basicAdd(otherEnd, msgs);
+		case BankTransferPackage.OWNER__BANK_ACCOUNT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBankAccount()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -236,8 +236,8 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BankTransferPackage.INHABER__KONTO:
-			return ((InternalEList<?>) getKonto()).basicRemove(otherEnd, msgs);
+		case BankTransferPackage.OWNER__BANK_ACCOUNT:
+			return ((InternalEList<?>) getBankAccount()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,14 +250,14 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BankTransferPackage.INHABER__NAME:
+		case BankTransferPackage.OWNER__NAME:
 			return getName();
-		case BankTransferPackage.INHABER__ANSCHRIFT:
-			return getAnschrift();
-		case BankTransferPackage.INHABER__TELEFONNUMMER:
-			return getTelefonnummer();
-		case BankTransferPackage.INHABER__KONTO:
-			return getKonto();
+		case BankTransferPackage.OWNER__ADRESS:
+			return getAdress();
+		case BankTransferPackage.OWNER__PHONE_NUMBER:
+			return getPhoneNumber();
+		case BankTransferPackage.OWNER__BANK_ACCOUNT:
+			return getBankAccount();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,18 +271,18 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BankTransferPackage.INHABER__NAME:
+		case BankTransferPackage.OWNER__NAME:
 			setName((String) newValue);
 			return;
-		case BankTransferPackage.INHABER__ANSCHRIFT:
-			setAnschrift((String) newValue);
+		case BankTransferPackage.OWNER__ADRESS:
+			setAdress((String) newValue);
 			return;
-		case BankTransferPackage.INHABER__TELEFONNUMMER:
-			setTelefonnummer((Integer) newValue);
+		case BankTransferPackage.OWNER__PHONE_NUMBER:
+			setPhoneNumber((Integer) newValue);
 			return;
-		case BankTransferPackage.INHABER__KONTO:
-			getKonto().clear();
-			getKonto().addAll((Collection<? extends Konto>) newValue);
+		case BankTransferPackage.OWNER__BANK_ACCOUNT:
+			getBankAccount().clear();
+			getBankAccount().addAll((Collection<? extends BankAccount>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -296,17 +296,17 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BankTransferPackage.INHABER__NAME:
+		case BankTransferPackage.OWNER__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case BankTransferPackage.INHABER__ANSCHRIFT:
-			setAnschrift(ANSCHRIFT_EDEFAULT);
+		case BankTransferPackage.OWNER__ADRESS:
+			setAdress(ADRESS_EDEFAULT);
 			return;
-		case BankTransferPackage.INHABER__TELEFONNUMMER:
-			setTelefonnummer(TELEFONNUMMER_EDEFAULT);
+		case BankTransferPackage.OWNER__PHONE_NUMBER:
+			setPhoneNumber(PHONE_NUMBER_EDEFAULT);
 			return;
-		case BankTransferPackage.INHABER__KONTO:
-			getKonto().clear();
+		case BankTransferPackage.OWNER__BANK_ACCOUNT:
+			getBankAccount().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -320,14 +320,14 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BankTransferPackage.INHABER__NAME:
+		case BankTransferPackage.OWNER__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case BankTransferPackage.INHABER__ANSCHRIFT:
-			return ANSCHRIFT_EDEFAULT == null ? anschrift != null : !ANSCHRIFT_EDEFAULT.equals(anschrift);
-		case BankTransferPackage.INHABER__TELEFONNUMMER:
-			return telefonnummer != TELEFONNUMMER_EDEFAULT;
-		case BankTransferPackage.INHABER__KONTO:
-			return konto != null && !konto.isEmpty();
+		case BankTransferPackage.OWNER__ADRESS:
+			return ADRESS_EDEFAULT == null ? adress != null : !ADRESS_EDEFAULT.equals(adress);
+		case BankTransferPackage.OWNER__PHONE_NUMBER:
+			return phoneNumber != PHONE_NUMBER_EDEFAULT;
+		case BankTransferPackage.OWNER__BANK_ACCOUNT:
+			return bankAccount != null && !bankAccount.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -345,12 +345,12 @@ public class InhaberImpl extends MinimalEObjectImpl.Container implements Inhaber
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", anschrift: ");
-		result.append(anschrift);
-		result.append(", telefonnummer: ");
-		result.append(telefonnummer);
+		result.append(", adress: ");
+		result.append(adress);
+		result.append(", phoneNumber: ");
+		result.append(phoneNumber);
 		result.append(')');
 		return result.toString();
 	}
 
-} //InhaberImpl
+} //OwnerImpl

@@ -57,10 +57,12 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case BankTransferPackage.KONTO:
-			return createKonto();
-		case BankTransferPackage.INHABER:
-			return createInhaber();
+		case BankTransferPackage.BANK_ACCOUNT:
+			return createBankAccount();
+		case BankTransferPackage.OWNER:
+			return createOwner();
+		case BankTransferPackage.EXCHANGE_RATE_API:
+			return createExchangeRateAPI();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,8 +76,8 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-		case BankTransferPackage.WAEHRUNG:
-			return createWaehrungFromString(eDataType, initialValue);
+		case BankTransferPackage.CURRENCY:
+			return createCurrencyFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -89,8 +91,8 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-		case BankTransferPackage.WAEHRUNG:
-			return convertWaehrungToString(eDataType, instanceValue);
+		case BankTransferPackage.CURRENCY:
+			return convertCurrencyToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -102,9 +104,9 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public Konto createKonto() {
-		KontoImpl konto = new KontoImpl();
-		return konto;
+	public BankAccount createBankAccount() {
+		BankAccountImpl bankAccount = new BankAccountImpl();
+		return bankAccount;
 	}
 
 	/**
@@ -113,9 +115,9 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public Inhaber createInhaber() {
-		InhaberImpl inhaber = new InhaberImpl();
-		return inhaber;
+	public Owner createOwner() {
+		OwnerImpl owner = new OwnerImpl();
+		return owner;
 	}
 
 	/**
@@ -123,8 +125,19 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Waehrung createWaehrungFromString(EDataType eDataType, String initialValue) {
-		Waehrung result = Waehrung.get(initialValue);
+	@Override
+	public ExchangeRateAPI createExchangeRateAPI() {
+		ExchangeRateAPIImpl exchangeRateAPI = new ExchangeRateAPIImpl();
+		return exchangeRateAPI;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Currency createCurrencyFromString(EDataType eDataType, String initialValue) {
+		Currency result = Currency.get(initialValue);
 		if (result == null)
 			throw new IllegalArgumentException(
 					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -136,7 +149,7 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertWaehrungToString(EDataType eDataType, Object instanceValue) {
+	public String convertCurrencyToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

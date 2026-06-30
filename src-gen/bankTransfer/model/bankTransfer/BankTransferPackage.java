@@ -5,6 +5,7 @@ package bankTransfer.model.bankTransfer;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -58,14 +59,14 @@ public interface BankTransferPackage extends EPackage {
 	BankTransferPackage eINSTANCE = bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.KontoImpl <em>Konto</em>}' class.
+	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl <em>Bank Account</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see bankTransfer.model.bankTransfer.impl.KontoImpl
-	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getKonto()
+	 * @see bankTransfer.model.bankTransfer.impl.BankAccountImpl
+	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getBankAccount()
 	 * @generated
 	 */
-	int KONTO = 0;
+	int BANK_ACCOUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Iban</b></em>' attribute.
@@ -74,7 +75,7 @@ public interface BankTransferPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO__IBAN = 0;
+	int BANK_ACCOUNT__IBAN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Bic</b></em>' attribute.
@@ -83,62 +84,62 @@ public interface BankTransferPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO__BIC = 1;
+	int BANK_ACCOUNT__BIC = 1;
 
 	/**
-	 * The feature id for the '<em><b>Kontostand</b></em>' attribute.
+	 * The feature id for the '<em><b>Account Balance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO__KONTOSTAND = 2;
+	int BANK_ACCOUNT__ACCOUNT_BALANCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Inhaber</b></em>' reference list.
+	 * The feature id for the '<em><b>Owner</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO__INHABER = 3;
+	int BANK_ACCOUNT__OWNER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Waehrung</b></em>' attribute.
+	 * The feature id for the '<em><b>Currency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO__WAEHRUNG = 4;
+	int BANK_ACCOUNT__CURRENCY = 4;
 
 	/**
-	 * The number of structural features of the '<em>Konto</em>' class.
+	 * The number of structural features of the '<em>Bank Account</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO_FEATURE_COUNT = 5;
+	int BANK_ACCOUNT_FEATURE_COUNT = 5;
 
 	/**
-	 * The number of operations of the '<em>Konto</em>' class.
+	 * The number of operations of the '<em>Bank Account</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO_OPERATION_COUNT = 0;
+	int BANK_ACCOUNT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.InhaberImpl <em>Inhaber</em>}' class.
+	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.OwnerImpl <em>Owner</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see bankTransfer.model.bankTransfer.impl.InhaberImpl
-	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getInhaber()
+	 * @see bankTransfer.model.bankTransfer.impl.OwnerImpl
+	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getOwner()
 	 * @generated
 	 */
-	int INHABER = 1;
+	int OWNER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -147,191 +148,248 @@ public interface BankTransferPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INHABER__NAME = 0;
+	int OWNER__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Anschrift</b></em>' attribute.
+	 * The feature id for the '<em><b>Adress</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHABER__ANSCHRIFT = 1;
+	int OWNER__ADRESS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Telefonnummer</b></em>' attribute.
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHABER__TELEFONNUMMER = 2;
+	int OWNER__PHONE_NUMBER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Konto</b></em>' reference list.
+	 * The feature id for the '<em><b>Bank Account</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHABER__KONTO = 3;
+	int OWNER__BANK_ACCOUNT = 3;
 
 	/**
-	 * The number of structural features of the '<em>Inhaber</em>' class.
+	 * The number of structural features of the '<em>Owner</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHABER_FEATURE_COUNT = 4;
+	int OWNER_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Inhaber</em>' class.
+	 * The number of operations of the '<em>Owner</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INHABER_OPERATION_COUNT = 0;
+	int OWNER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.Waehrung <em>Waehrung</em>}' enum.
+	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl <em>Exchange Rate API</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see bankTransfer.model.bankTransfer.Waehrung
-	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getWaehrung()
+	 * @see bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl
+	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getExchangeRateAPI()
 	 * @generated
 	 */
-	int WAEHRUNG = 2;
+	int EXCHANGE_RATE_API = 2;
 
 	/**
-	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.Konto <em>Konto</em>}'.
+	 * The number of structural features of the '<em>Exchange Rate API</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Konto</em>'.
-	 * @see bankTransfer.model.bankTransfer.Konto
 	 * @generated
+	 * @ordered
 	 */
-	EClass getKonto();
+	int EXCHANGE_RATE_API_FEATURE_COUNT = 0;
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Konto#getIban <em>Iban</em>}'.
+	 * The operation id for the '<em>Get exchangerate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXCHANGE_RATE_API___GET_EXCHANGERATE = 0;
+
+	/**
+	 * The number of operations of the '<em>Exchange Rate API</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXCHANGE_RATE_API_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.Currency <em>Currency</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see bankTransfer.model.bankTransfer.Currency
+	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getCurrency()
+	 * @generated
+	 */
+	int CURRENCY = 3;
+
+	/**
+	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.BankAccount <em>Bank Account</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bank Account</em>'.
+	 * @see bankTransfer.model.bankTransfer.BankAccount
+	 * @generated
+	 */
+	EClass getBankAccount();
+
+	/**
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.BankAccount#getIban <em>Iban</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Iban</em>'.
-	 * @see bankTransfer.model.bankTransfer.Konto#getIban()
-	 * @see #getKonto()
+	 * @see bankTransfer.model.bankTransfer.BankAccount#getIban()
+	 * @see #getBankAccount()
 	 * @generated
 	 */
-	EAttribute getKonto_Iban();
+	EAttribute getBankAccount_Iban();
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Konto#getBic <em>Bic</em>}'.
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.BankAccount#getBic <em>Bic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Bic</em>'.
-	 * @see bankTransfer.model.bankTransfer.Konto#getBic()
-	 * @see #getKonto()
+	 * @see bankTransfer.model.bankTransfer.BankAccount#getBic()
+	 * @see #getBankAccount()
 	 * @generated
 	 */
-	EAttribute getKonto_Bic();
+	EAttribute getBankAccount_Bic();
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Konto#getKontostand <em>Kontostand</em>}'.
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.BankAccount#getAccountBalance <em>Account Balance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Kontostand</em>'.
-	 * @see bankTransfer.model.bankTransfer.Konto#getKontostand()
-	 * @see #getKonto()
+	 * @return the meta object for the attribute '<em>Account Balance</em>'.
+	 * @see bankTransfer.model.bankTransfer.BankAccount#getAccountBalance()
+	 * @see #getBankAccount()
 	 * @generated
 	 */
-	EAttribute getKonto_Kontostand();
+	EAttribute getBankAccount_AccountBalance();
 
 	/**
-	 * Returns the meta object for the reference list '{@link bankTransfer.model.bankTransfer.Konto#getInhaber <em>Inhaber</em>}'.
+	 * Returns the meta object for the reference list '{@link bankTransfer.model.bankTransfer.BankAccount#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Inhaber</em>'.
-	 * @see bankTransfer.model.bankTransfer.Konto#getInhaber()
-	 * @see #getKonto()
+	 * @return the meta object for the reference list '<em>Owner</em>'.
+	 * @see bankTransfer.model.bankTransfer.BankAccount#getOwner()
+	 * @see #getBankAccount()
 	 * @generated
 	 */
-	EReference getKonto_Inhaber();
+	EReference getBankAccount_Owner();
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Konto#getWaehrung <em>Waehrung</em>}'.
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.BankAccount#getCurrency <em>Currency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Waehrung</em>'.
-	 * @see bankTransfer.model.bankTransfer.Konto#getWaehrung()
-	 * @see #getKonto()
+	 * @return the meta object for the attribute '<em>Currency</em>'.
+	 * @see bankTransfer.model.bankTransfer.BankAccount#getCurrency()
+	 * @see #getBankAccount()
 	 * @generated
 	 */
-	EAttribute getKonto_Waehrung();
+	EAttribute getBankAccount_Currency();
 
 	/**
-	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.Inhaber <em>Inhaber</em>}'.
+	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.Owner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Inhaber</em>'.
-	 * @see bankTransfer.model.bankTransfer.Inhaber
+	 * @return the meta object for class '<em>Owner</em>'.
+	 * @see bankTransfer.model.bankTransfer.Owner
 	 * @generated
 	 */
-	EClass getInhaber();
+	EClass getOwner();
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Inhaber#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Owner#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see bankTransfer.model.bankTransfer.Inhaber#getName()
-	 * @see #getInhaber()
+	 * @see bankTransfer.model.bankTransfer.Owner#getName()
+	 * @see #getOwner()
 	 * @generated
 	 */
-	EAttribute getInhaber_Name();
+	EAttribute getOwner_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Inhaber#getAnschrift <em>Anschrift</em>}'.
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Owner#getAdress <em>Adress</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Anschrift</em>'.
-	 * @see bankTransfer.model.bankTransfer.Inhaber#getAnschrift()
-	 * @see #getInhaber()
+	 * @return the meta object for the attribute '<em>Adress</em>'.
+	 * @see bankTransfer.model.bankTransfer.Owner#getAdress()
+	 * @see #getOwner()
 	 * @generated
 	 */
-	EAttribute getInhaber_Anschrift();
+	EAttribute getOwner_Adress();
 
 	/**
-	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Inhaber#getTelefonnummer <em>Telefonnummer</em>}'.
+	 * Returns the meta object for the attribute '{@link bankTransfer.model.bankTransfer.Owner#getPhoneNumber <em>Phone Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Telefonnummer</em>'.
-	 * @see bankTransfer.model.bankTransfer.Inhaber#getTelefonnummer()
-	 * @see #getInhaber()
+	 * @return the meta object for the attribute '<em>Phone Number</em>'.
+	 * @see bankTransfer.model.bankTransfer.Owner#getPhoneNumber()
+	 * @see #getOwner()
 	 * @generated
 	 */
-	EAttribute getInhaber_Telefonnummer();
+	EAttribute getOwner_PhoneNumber();
 
 	/**
-	 * Returns the meta object for the reference list '{@link bankTransfer.model.bankTransfer.Inhaber#getKonto <em>Konto</em>}'.
+	 * Returns the meta object for the reference list '{@link bankTransfer.model.bankTransfer.Owner#getBankAccount <em>Bank Account</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Konto</em>'.
-	 * @see bankTransfer.model.bankTransfer.Inhaber#getKonto()
-	 * @see #getInhaber()
+	 * @return the meta object for the reference list '<em>Bank Account</em>'.
+	 * @see bankTransfer.model.bankTransfer.Owner#getBankAccount()
+	 * @see #getOwner()
 	 * @generated
 	 */
-	EReference getInhaber_Konto();
+	EReference getOwner_BankAccount();
 
 	/**
-	 * Returns the meta object for enum '{@link bankTransfer.model.bankTransfer.Waehrung <em>Waehrung</em>}'.
+	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.ExchangeRateAPI <em>Exchange Rate API</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Waehrung</em>'.
-	 * @see bankTransfer.model.bankTransfer.Waehrung
+	 * @return the meta object for class '<em>Exchange Rate API</em>'.
+	 * @see bankTransfer.model.bankTransfer.ExchangeRateAPI
 	 * @generated
 	 */
-	EEnum getWaehrung();
+	EClass getExchangeRateAPI();
+
+	/**
+	 * Returns the meta object for the '{@link bankTransfer.model.bankTransfer.ExchangeRateAPI#get_exchangerate() <em>Get exchangerate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get exchangerate</em>' operation.
+	 * @see bankTransfer.model.bankTransfer.ExchangeRateAPI#get_exchangerate()
+	 * @generated
+	 */
+	EOperation getExchangeRateAPI__Get_exchangerate();
+
+	/**
+	 * Returns the meta object for enum '{@link bankTransfer.model.bankTransfer.Currency <em>Currency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Currency</em>'.
+	 * @see bankTransfer.model.bankTransfer.Currency
+	 * @generated
+	 */
+	EEnum getCurrency();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -357,14 +415,14 @@ public interface BankTransferPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.KontoImpl <em>Konto</em>}' class.
+		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl <em>Bank Account</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see bankTransfer.model.bankTransfer.impl.KontoImpl
-		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getKonto()
+		 * @see bankTransfer.model.bankTransfer.impl.BankAccountImpl
+		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getBankAccount()
 		 * @generated
 		 */
-		EClass KONTO = eINSTANCE.getKonto();
+		EClass BANK_ACCOUNT = eINSTANCE.getBankAccount();
 
 		/**
 		 * The meta object literal for the '<em><b>Iban</b></em>' attribute feature.
@@ -372,7 +430,7 @@ public interface BankTransferPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KONTO__IBAN = eINSTANCE.getKonto_Iban();
+		EAttribute BANK_ACCOUNT__IBAN = eINSTANCE.getBankAccount_Iban();
 
 		/**
 		 * The meta object literal for the '<em><b>Bic</b></em>' attribute feature.
@@ -380,41 +438,41 @@ public interface BankTransferPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KONTO__BIC = eINSTANCE.getKonto_Bic();
+		EAttribute BANK_ACCOUNT__BIC = eINSTANCE.getBankAccount_Bic();
 
 		/**
-		 * The meta object literal for the '<em><b>Kontostand</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Account Balance</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KONTO__KONTOSTAND = eINSTANCE.getKonto_Kontostand();
+		EAttribute BANK_ACCOUNT__ACCOUNT_BALANCE = eINSTANCE.getBankAccount_AccountBalance();
 
 		/**
-		 * The meta object literal for the '<em><b>Inhaber</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Owner</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference KONTO__INHABER = eINSTANCE.getKonto_Inhaber();
+		EReference BANK_ACCOUNT__OWNER = eINSTANCE.getBankAccount_Owner();
 
 		/**
-		 * The meta object literal for the '<em><b>Waehrung</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Currency</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KONTO__WAEHRUNG = eINSTANCE.getKonto_Waehrung();
+		EAttribute BANK_ACCOUNT__CURRENCY = eINSTANCE.getBankAccount_Currency();
 
 		/**
-		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.InhaberImpl <em>Inhaber</em>}' class.
+		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.OwnerImpl <em>Owner</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see bankTransfer.model.bankTransfer.impl.InhaberImpl
-		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getInhaber()
+		 * @see bankTransfer.model.bankTransfer.impl.OwnerImpl
+		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getOwner()
 		 * @generated
 		 */
-		EClass INHABER = eINSTANCE.getInhaber();
+		EClass OWNER = eINSTANCE.getOwner();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -422,41 +480,59 @@ public interface BankTransferPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INHABER__NAME = eINSTANCE.getInhaber_Name();
+		EAttribute OWNER__NAME = eINSTANCE.getOwner_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Anschrift</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Adress</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INHABER__ANSCHRIFT = eINSTANCE.getInhaber_Anschrift();
+		EAttribute OWNER__ADRESS = eINSTANCE.getOwner_Adress();
 
 		/**
-		 * The meta object literal for the '<em><b>Telefonnummer</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Phone Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INHABER__TELEFONNUMMER = eINSTANCE.getInhaber_Telefonnummer();
+		EAttribute OWNER__PHONE_NUMBER = eINSTANCE.getOwner_PhoneNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Konto</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Bank Account</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INHABER__KONTO = eINSTANCE.getInhaber_Konto();
+		EReference OWNER__BANK_ACCOUNT = eINSTANCE.getOwner_BankAccount();
 
 		/**
-		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.Waehrung <em>Waehrung</em>}' enum.
+		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl <em>Exchange Rate API</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see bankTransfer.model.bankTransfer.Waehrung
-		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getWaehrung()
+		 * @see bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl
+		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getExchangeRateAPI()
 		 * @generated
 		 */
-		EEnum WAEHRUNG = eINSTANCE.getWaehrung();
+		EClass EXCHANGE_RATE_API = eINSTANCE.getExchangeRateAPI();
+
+		/**
+		 * The meta object literal for the '<em><b>Get exchangerate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation EXCHANGE_RATE_API___GET_EXCHANGERATE = eINSTANCE.getExchangeRateAPI__Get_exchangerate();
+
+		/**
+		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.Currency <em>Currency</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see bankTransfer.model.bankTransfer.Currency
+		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getCurrency()
+		 * @generated
+		 */
+		EEnum CURRENCY = eINSTANCE.getCurrency();
 
 	}
 

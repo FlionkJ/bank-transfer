@@ -10,24 +10,27 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="BankTransfer" basePackage="bankTransfer.model" disposableProviderFactory="true"
       ecorePackage="bankTransfer.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bankTransfer.ecore#//Waehrung">
-      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Waehrung/EURO"/>
-      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Waehrung/USDOLLAR"/>
-      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Waehrung/SEK"/>
-      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Waehrung/NOK"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="bankTransfer.ecore#//Currency">
+      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Currency/EUR"/>
+      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Currency/USD"/>
+      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Currency/SEK"/>
+      <genEnumLiterals ecoreEnumLiteral="bankTransfer.ecore#//Currency/NOK"/>
     </genEnums>
-    <genClasses ecoreClass="bankTransfer.ecore#//Konto">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Konto/iban"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Konto/bic"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Konto/kontostand"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bankTransfer.ecore#//Konto/inhaber"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Konto/waehrung"/>
+    <genClasses ecoreClass="bankTransfer.ecore#//BankAccount">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//BankAccount/iban"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//BankAccount/bic"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//BankAccount/accountBalance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bankTransfer.ecore#//BankAccount/owner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//BankAccount/currency"/>
     </genClasses>
-    <genClasses ecoreClass="bankTransfer.ecore#//Inhaber">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Inhaber/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Inhaber/anschrift"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Inhaber/telefonnummer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bankTransfer.ecore#//Inhaber/konto"/>
+    <genClasses ecoreClass="bankTransfer.ecore#//Owner">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Owner/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Owner/adress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Owner/phoneNumber"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bankTransfer.ecore#//Owner/bankAccount"/>
+    </genClasses>
+    <genClasses ecoreClass="bankTransfer.ecore#//ExchangeRateAPI">
+      <genOperations ecoreOperation="bankTransfer.ecore#//ExchangeRateAPI/get_exchangerate"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

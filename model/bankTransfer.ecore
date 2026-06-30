@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="bankTransfer" nsURI="http://www.example.org/bankTransfer" nsPrefix="bankTransfer">
-  <eClassifiers xsi:type="ecore:EClass" name="Konto">
+  <eClassifiers xsi:type="ecore:EClass" name="BankAccount">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="iban" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kontostand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inhaber" upperBound="3"
-        eType="#//Inhaber" eOpposite="#//Inhaber/konto"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="waehrung" eType="#//Waehrung"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="accountBalance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" upperBound="3" eType="#//Owner"
+        eOpposite="#//Owner/bankAccount"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currency" eType="#//Currency"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Inhaber">
+  <eClassifiers xsi:type="ecore:EClass" name="Owner">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anschrift" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="telefonnummer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="konto" upperBound="-1"
-        eType="#//Konto" eOpposite="#//Konto/inhaber"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phoneNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bankAccount" upperBound="-1"
+        eType="#//BankAccount" eOpposite="#//BankAccount/owner"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Waehrung">
-    <eLiterals name="EURO"/>
-    <eLiterals name="USDOLLAR" value="1"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Currency">
+    <eLiterals name="EUR"/>
+    <eLiterals name="USD" value="1" literal="USD"/>
     <eLiterals name="SEK" value="2"/>
     <eLiterals name="NOK" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExchangeRateAPI">
+    <eOperations name="get_exchangerate"/>
   </eClassifiers>
 </ecore:EPackage>

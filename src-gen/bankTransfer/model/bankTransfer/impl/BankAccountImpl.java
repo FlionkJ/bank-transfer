@@ -2,10 +2,10 @@
  */
 package bankTransfer.model.bankTransfer.impl;
 
+import bankTransfer.model.bankTransfer.BankAccount;
 import bankTransfer.model.bankTransfer.BankTransferPackage;
-import bankTransfer.model.bankTransfer.Inhaber;
-import bankTransfer.model.bankTransfer.Konto;
-import bankTransfer.model.bankTransfer.Waehrung;
+import bankTransfer.model.bankTransfer.Currency;
+import bankTransfer.model.bankTransfer.Owner;
 
 import java.util.Collection;
 
@@ -25,22 +25,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Konto</b></em>'.
+ * An implementation of the model object '<em><b>Bank Account</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.KontoImpl#getIban <em>Iban</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.KontoImpl#getBic <em>Bic</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.KontoImpl#getKontostand <em>Kontostand</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.KontoImpl#getInhaber <em>Inhaber</em>}</li>
- *   <li>{@link bankTransfer.model.bankTransfer.impl.KontoImpl#getWaehrung <em>Waehrung</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl#getIban <em>Iban</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl#getBic <em>Bic</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl#getAccountBalance <em>Account Balance</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link bankTransfer.model.bankTransfer.impl.BankAccountImpl#getCurrency <em>Currency</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
+public class BankAccountImpl extends MinimalEObjectImpl.Container implements BankAccount {
 	/**
 	 * The default value of the '{@link #getIban() <em>Iban</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,61 +82,61 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	protected String bic = BIC_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getKontostand() <em>Kontostand</em>}' attribute.
+	 * The default value of the '{@link #getAccountBalance() <em>Account Balance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKontostand()
+	 * @see #getAccountBalance()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int KONTOSTAND_EDEFAULT = 0;
+	protected static final int ACCOUNT_BALANCE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getKontostand() <em>Kontostand</em>}' attribute.
+	 * The cached value of the '{@link #getAccountBalance() <em>Account Balance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKontostand()
+	 * @see #getAccountBalance()
 	 * @generated
 	 * @ordered
 	 */
-	protected int kontostand = KONTOSTAND_EDEFAULT;
+	protected int accountBalance = ACCOUNT_BALANCE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInhaber() <em>Inhaber</em>}' reference list.
+	 * The cached value of the '{@link #getOwner() <em>Owner</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInhaber()
+	 * @see #getOwner()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Inhaber> inhaber;
+	protected EList<Owner> owner;
 
 	/**
-	 * The default value of the '{@link #getWaehrung() <em>Waehrung</em>}' attribute.
+	 * The default value of the '{@link #getCurrency() <em>Currency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWaehrung()
+	 * @see #getCurrency()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Waehrung WAEHRUNG_EDEFAULT = Waehrung.EURO;
+	protected static final Currency CURRENCY_EDEFAULT = Currency.EUR;
 
 	/**
-	 * The cached value of the '{@link #getWaehrung() <em>Waehrung</em>}' attribute.
+	 * The cached value of the '{@link #getCurrency() <em>Currency</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWaehrung()
+	 * @see #getCurrency()
 	 * @generated
 	 * @ordered
 	 */
-	protected Waehrung waehrung = WAEHRUNG_EDEFAULT;
+	protected Currency currency = CURRENCY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected KontoImpl() {
+	protected BankAccountImpl() {
 		super();
 	}
 
@@ -147,7 +147,7 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return BankTransferPackage.Literals.KONTO;
+		return BankTransferPackage.Literals.BANK_ACCOUNT;
 	}
 
 	/**
@@ -170,7 +170,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 		String oldIban = iban;
 		iban = newIban;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.KONTO__IBAN, oldIban, iban));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.BANK_ACCOUNT__IBAN, oldIban,
+					iban));
 	}
 
 	/**
@@ -193,7 +194,7 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 		String oldBic = bic;
 		bic = newBic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.KONTO__BIC, oldBic, bic));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.BANK_ACCOUNT__BIC, oldBic, bic));
 	}
 
 	/**
@@ -202,8 +203,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @generated
 	 */
 	@Override
-	public int getKontostand() {
-		return kontostand;
+	public int getAccountBalance() {
+		return accountBalance;
 	}
 
 	/**
@@ -212,12 +213,12 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @generated
 	 */
 	@Override
-	public void setKontostand(int newKontostand) {
-		int oldKontostand = kontostand;
-		kontostand = newKontostand;
+	public void setAccountBalance(int newAccountBalance) {
+		int oldAccountBalance = accountBalance;
+		accountBalance = newAccountBalance;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.KONTO__KONTOSTAND, oldKontostand,
-					kontostand));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.BANK_ACCOUNT__ACCOUNT_BALANCE,
+					oldAccountBalance, accountBalance));
 	}
 
 	/**
@@ -226,12 +227,12 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @generated
 	 */
 	@Override
-	public EList<Inhaber> getInhaber() {
-		if (inhaber == null) {
-			inhaber = new EObjectWithInverseResolvingEList.ManyInverse<Inhaber>(Inhaber.class, this,
-					BankTransferPackage.KONTO__INHABER, BankTransferPackage.INHABER__KONTO);
+	public EList<Owner> getOwner() {
+		if (owner == null) {
+			owner = new EObjectWithInverseResolvingEList.ManyInverse<Owner>(Owner.class, this,
+					BankTransferPackage.BANK_ACCOUNT__OWNER, BankTransferPackage.OWNER__BANK_ACCOUNT);
 		}
-		return inhaber;
+		return owner;
 	}
 
 	/**
@@ -240,8 +241,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @generated
 	 */
 	@Override
-	public Waehrung getWaehrung() {
-		return waehrung;
+	public Currency getCurrency() {
+		return currency;
 	}
 
 	/**
@@ -250,12 +251,12 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @generated
 	 */
 	@Override
-	public void setWaehrung(Waehrung newWaehrung) {
-		Waehrung oldWaehrung = waehrung;
-		waehrung = newWaehrung == null ? WAEHRUNG_EDEFAULT : newWaehrung;
+	public void setCurrency(Currency newCurrency) {
+		Currency oldCurrency = currency;
+		currency = newCurrency == null ? CURRENCY_EDEFAULT : newCurrency;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.KONTO__WAEHRUNG, oldWaehrung,
-					waehrung));
+			eNotify(new ENotificationImpl(this, Notification.SET, BankTransferPackage.BANK_ACCOUNT__CURRENCY,
+					oldCurrency, currency));
 	}
 
 	/**
@@ -267,8 +268,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BankTransferPackage.KONTO__INHABER:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getInhaber()).basicAdd(otherEnd, msgs);
+		case BankTransferPackage.BANK_ACCOUNT__OWNER:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwner()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -281,8 +282,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case BankTransferPackage.KONTO__INHABER:
-			return ((InternalEList<?>) getInhaber()).basicRemove(otherEnd, msgs);
+		case BankTransferPackage.BANK_ACCOUNT__OWNER:
+			return ((InternalEList<?>) getOwner()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -295,16 +296,16 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case BankTransferPackage.KONTO__IBAN:
+		case BankTransferPackage.BANK_ACCOUNT__IBAN:
 			return getIban();
-		case BankTransferPackage.KONTO__BIC:
+		case BankTransferPackage.BANK_ACCOUNT__BIC:
 			return getBic();
-		case BankTransferPackage.KONTO__KONTOSTAND:
-			return getKontostand();
-		case BankTransferPackage.KONTO__INHABER:
-			return getInhaber();
-		case BankTransferPackage.KONTO__WAEHRUNG:
-			return getWaehrung();
+		case BankTransferPackage.BANK_ACCOUNT__ACCOUNT_BALANCE:
+			return getAccountBalance();
+		case BankTransferPackage.BANK_ACCOUNT__OWNER:
+			return getOwner();
+		case BankTransferPackage.BANK_ACCOUNT__CURRENCY:
+			return getCurrency();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -318,21 +319,21 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case BankTransferPackage.KONTO__IBAN:
+		case BankTransferPackage.BANK_ACCOUNT__IBAN:
 			setIban((String) newValue);
 			return;
-		case BankTransferPackage.KONTO__BIC:
+		case BankTransferPackage.BANK_ACCOUNT__BIC:
 			setBic((String) newValue);
 			return;
-		case BankTransferPackage.KONTO__KONTOSTAND:
-			setKontostand((Integer) newValue);
+		case BankTransferPackage.BANK_ACCOUNT__ACCOUNT_BALANCE:
+			setAccountBalance((Integer) newValue);
 			return;
-		case BankTransferPackage.KONTO__INHABER:
-			getInhaber().clear();
-			getInhaber().addAll((Collection<? extends Inhaber>) newValue);
+		case BankTransferPackage.BANK_ACCOUNT__OWNER:
+			getOwner().clear();
+			getOwner().addAll((Collection<? extends Owner>) newValue);
 			return;
-		case BankTransferPackage.KONTO__WAEHRUNG:
-			setWaehrung((Waehrung) newValue);
+		case BankTransferPackage.BANK_ACCOUNT__CURRENCY:
+			setCurrency((Currency) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -346,20 +347,20 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case BankTransferPackage.KONTO__IBAN:
+		case BankTransferPackage.BANK_ACCOUNT__IBAN:
 			setIban(IBAN_EDEFAULT);
 			return;
-		case BankTransferPackage.KONTO__BIC:
+		case BankTransferPackage.BANK_ACCOUNT__BIC:
 			setBic(BIC_EDEFAULT);
 			return;
-		case BankTransferPackage.KONTO__KONTOSTAND:
-			setKontostand(KONTOSTAND_EDEFAULT);
+		case BankTransferPackage.BANK_ACCOUNT__ACCOUNT_BALANCE:
+			setAccountBalance(ACCOUNT_BALANCE_EDEFAULT);
 			return;
-		case BankTransferPackage.KONTO__INHABER:
-			getInhaber().clear();
+		case BankTransferPackage.BANK_ACCOUNT__OWNER:
+			getOwner().clear();
 			return;
-		case BankTransferPackage.KONTO__WAEHRUNG:
-			setWaehrung(WAEHRUNG_EDEFAULT);
+		case BankTransferPackage.BANK_ACCOUNT__CURRENCY:
+			setCurrency(CURRENCY_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -373,16 +374,16 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case BankTransferPackage.KONTO__IBAN:
+		case BankTransferPackage.BANK_ACCOUNT__IBAN:
 			return IBAN_EDEFAULT == null ? iban != null : !IBAN_EDEFAULT.equals(iban);
-		case BankTransferPackage.KONTO__BIC:
+		case BankTransferPackage.BANK_ACCOUNT__BIC:
 			return BIC_EDEFAULT == null ? bic != null : !BIC_EDEFAULT.equals(bic);
-		case BankTransferPackage.KONTO__KONTOSTAND:
-			return kontostand != KONTOSTAND_EDEFAULT;
-		case BankTransferPackage.KONTO__INHABER:
-			return inhaber != null && !inhaber.isEmpty();
-		case BankTransferPackage.KONTO__WAEHRUNG:
-			return waehrung != WAEHRUNG_EDEFAULT;
+		case BankTransferPackage.BANK_ACCOUNT__ACCOUNT_BALANCE:
+			return accountBalance != ACCOUNT_BALANCE_EDEFAULT;
+		case BankTransferPackage.BANK_ACCOUNT__OWNER:
+			return owner != null && !owner.isEmpty();
+		case BankTransferPackage.BANK_ACCOUNT__CURRENCY:
+			return currency != CURRENCY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -402,12 +403,12 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 		result.append(iban);
 		result.append(", bic: ");
 		result.append(bic);
-		result.append(", kontostand: ");
-		result.append(kontostand);
-		result.append(", waehrung: ");
-		result.append(waehrung);
+		result.append(", accountBalance: ");
+		result.append(accountBalance);
+		result.append(", currency: ");
+		result.append(currency);
 		result.append(')');
 		return result.toString();
 	}
 
-} //KontoImpl
+} //BankAccountImpl

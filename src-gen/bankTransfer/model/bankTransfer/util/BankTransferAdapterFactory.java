@@ -67,13 +67,18 @@ public class BankTransferAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected BankTransferSwitch<Adapter> modelSwitch = new BankTransferSwitch<Adapter>() {
 		@Override
-		public Adapter caseKonto(Konto object) {
-			return createKontoAdapter();
+		public Adapter caseBankAccount(BankAccount object) {
+			return createBankAccountAdapter();
 		}
 
 		@Override
-		public Adapter caseInhaber(Inhaber object) {
-			return createInhaberAdapter();
+		public Adapter caseOwner(Owner object) {
+			return createOwnerAdapter();
+		}
+
+		@Override
+		public Adapter caseExchangeRateAPI(ExchangeRateAPI object) {
+			return createExchangeRateAPIAdapter();
 		}
 
 		@Override
@@ -96,30 +101,44 @@ public class BankTransferAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link bankTransfer.model.bankTransfer.Konto <em>Konto</em>}'.
+	 * Creates a new adapter for an object of class '{@link bankTransfer.model.bankTransfer.BankAccount <em>Bank Account</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see bankTransfer.model.bankTransfer.Konto
+	 * @see bankTransfer.model.bankTransfer.BankAccount
 	 * @generated
 	 */
-	public Adapter createKontoAdapter() {
+	public Adapter createBankAccountAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link bankTransfer.model.bankTransfer.Inhaber <em>Inhaber</em>}'.
+	 * Creates a new adapter for an object of class '{@link bankTransfer.model.bankTransfer.Owner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see bankTransfer.model.bankTransfer.Inhaber
+	 * @see bankTransfer.model.bankTransfer.Owner
 	 * @generated
 	 */
-	public Adapter createInhaberAdapter() {
+	public Adapter createOwnerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link bankTransfer.model.bankTransfer.ExchangeRateAPI <em>Exchange Rate API</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see bankTransfer.model.bankTransfer.ExchangeRateAPI
+	 * @generated
+	 */
+	public Adapter createExchangeRateAPIAdapter() {
 		return null;
 	}
 

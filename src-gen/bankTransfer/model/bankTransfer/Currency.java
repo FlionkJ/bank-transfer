@@ -10,33 +10,33 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Waehrung</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Currency</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see bankTransfer.model.bankTransfer.BankTransferPackage#getWaehrung()
+ * @see bankTransfer.model.bankTransfer.BankTransferPackage#getCurrency()
  * @model
  * @generated
  */
-public enum Waehrung implements Enumerator {
+public enum Currency implements Enumerator {
 	/**
-	 * The '<em><b>EURO</b></em>' literal object.
+	 * The '<em><b>EUR</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EURO_VALUE
+	 * @see #EUR_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EURO(0, "EURO", "EURO"),
+	EUR(0, "EUR", "EUR"),
 
 	/**
-	 * The '<em><b>USDOLLAR</b></em>' literal object.
+	 * The '<em><b>USD</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #USDOLLAR_VALUE
+	 * @see #USD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	USDOLLAR(1, "USDOLLAR", "USDOLLAR"),
+	USD(1, "USD", "USD"),
 
 	/**
 	 * The '<em><b>SEK</b></em>' literal object.
@@ -59,26 +59,26 @@ public enum Waehrung implements Enumerator {
 	NOK(3, "NOK", "NOK");
 
 	/**
-	 * The '<em><b>EURO</b></em>' literal value.
+	 * The '<em><b>EUR</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #EURO
+	 * @see #EUR
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EURO_VALUE = 0;
+	public static final int EUR_VALUE = 0;
 
 	/**
-	 * The '<em><b>USDOLLAR</b></em>' literal value.
+	 * The '<em><b>USD</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #USDOLLAR
+	 * @see #USD
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USDOLLAR_VALUE = 1;
+	public static final int USD_VALUE = 1;
 
 	/**
 	 * The '<em><b>SEK</b></em>' literal value.
@@ -103,32 +103,32 @@ public enum Waehrung implements Enumerator {
 	public static final int NOK_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>Waehrung</b></em>' enumerators.
+	 * An array of all the '<em><b>Currency</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Waehrung[] VALUES_ARRAY = new Waehrung[] { EURO, USDOLLAR, SEK, NOK, };
+	private static final Currency[] VALUES_ARRAY = new Currency[] { EUR, USD, SEK, NOK, };
 
 	/**
-	 * A public read-only list of all the '<em><b>Waehrung</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Currency</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Waehrung> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Currency> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Waehrung</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Currency</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Waehrung get(String literal) {
+	public static Currency get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Waehrung result = VALUES_ARRAY[i];
+			Currency result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -137,16 +137,16 @@ public enum Waehrung implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Waehrung</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Currency</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Waehrung getByName(String name) {
+	public static Currency getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Waehrung result = VALUES_ARRAY[i];
+			Currency result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -155,19 +155,19 @@ public enum Waehrung implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Waehrung</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Currency</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Waehrung get(int value) {
+	public static Currency get(int value) {
 		switch (value) {
-		case EURO_VALUE:
-			return EURO;
-		case USDOLLAR_VALUE:
-			return USDOLLAR;
+		case EUR_VALUE:
+			return EUR;
+		case USD_VALUE:
+			return USD;
 		case SEK_VALUE:
 			return SEK;
 		case NOK_VALUE:
@@ -203,7 +203,7 @@ public enum Waehrung implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Waehrung(int value, String name, String literal) {
+	private Currency(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -250,4 +250,4 @@ public enum Waehrung implements Enumerator {
 		return literal;
 	}
 
-} //Waehrung
+} //Currency

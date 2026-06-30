@@ -2,15 +2,17 @@
  */
 package bankTransfer.model.bankTransfer.impl;
 
+import bankTransfer.model.bankTransfer.BankAccount;
 import bankTransfer.model.bankTransfer.BankTransferFactory;
 import bankTransfer.model.bankTransfer.BankTransferPackage;
-import bankTransfer.model.bankTransfer.Inhaber;
-import bankTransfer.model.bankTransfer.Konto;
-import bankTransfer.model.bankTransfer.Waehrung;
+import bankTransfer.model.bankTransfer.Currency;
+import bankTransfer.model.bankTransfer.ExchangeRateAPI;
+import bankTransfer.model.bankTransfer.Owner;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -28,21 +30,28 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass kontoEClass = null;
+	private EClass bankAccountEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass inhaberEClass = null;
+	private EClass ownerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum waehrungEEnum = null;
+	private EClass exchangeRateAPIEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum currencyEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -114,8 +123,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EClass getKonto() {
-		return kontoEClass;
+	public EClass getBankAccount() {
+		return bankAccountEClass;
 	}
 
 	/**
@@ -124,8 +133,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getKonto_Iban() {
-		return (EAttribute) kontoEClass.getEStructuralFeatures().get(0);
+	public EAttribute getBankAccount_Iban() {
+		return (EAttribute) bankAccountEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -134,8 +143,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getKonto_Bic() {
-		return (EAttribute) kontoEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBankAccount_Bic() {
+		return (EAttribute) bankAccountEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -144,8 +153,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getKonto_Kontostand() {
-		return (EAttribute) kontoEClass.getEStructuralFeatures().get(2);
+	public EAttribute getBankAccount_AccountBalance() {
+		return (EAttribute) bankAccountEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -154,8 +163,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EReference getKonto_Inhaber() {
-		return (EReference) kontoEClass.getEStructuralFeatures().get(3);
+	public EReference getBankAccount_Owner() {
+		return (EReference) bankAccountEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -164,8 +173,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getKonto_Waehrung() {
-		return (EAttribute) kontoEClass.getEStructuralFeatures().get(4);
+	public EAttribute getBankAccount_Currency() {
+		return (EAttribute) bankAccountEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -174,8 +183,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EClass getInhaber() {
-		return inhaberEClass;
+	public EClass getOwner() {
+		return ownerEClass;
 	}
 
 	/**
@@ -184,8 +193,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInhaber_Name() {
-		return (EAttribute) inhaberEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOwner_Name() {
+		return (EAttribute) ownerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -194,8 +203,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInhaber_Anschrift() {
-		return (EAttribute) inhaberEClass.getEStructuralFeatures().get(1);
+	public EAttribute getOwner_Adress() {
+		return (EAttribute) ownerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -204,8 +213,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInhaber_Telefonnummer() {
-		return (EAttribute) inhaberEClass.getEStructuralFeatures().get(2);
+	public EAttribute getOwner_PhoneNumber() {
+		return (EAttribute) ownerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -214,8 +223,8 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EReference getInhaber_Konto() {
-		return (EReference) inhaberEClass.getEStructuralFeatures().get(3);
+	public EReference getOwner_BankAccount() {
+		return (EReference) ownerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -224,8 +233,28 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EEnum getWaehrung() {
-		return waehrungEEnum;
+	public EClass getExchangeRateAPI() {
+		return exchangeRateAPIEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getExchangeRateAPI__Get_exchangerate() {
+		return exchangeRateAPIEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getCurrency() {
+		return currencyEEnum;
 	}
 
 	/**
@@ -258,21 +287,24 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 		isCreated = true;
 
 		// Create classes and their features
-		kontoEClass = createEClass(KONTO);
-		createEAttribute(kontoEClass, KONTO__IBAN);
-		createEAttribute(kontoEClass, KONTO__BIC);
-		createEAttribute(kontoEClass, KONTO__KONTOSTAND);
-		createEReference(kontoEClass, KONTO__INHABER);
-		createEAttribute(kontoEClass, KONTO__WAEHRUNG);
+		bankAccountEClass = createEClass(BANK_ACCOUNT);
+		createEAttribute(bankAccountEClass, BANK_ACCOUNT__IBAN);
+		createEAttribute(bankAccountEClass, BANK_ACCOUNT__BIC);
+		createEAttribute(bankAccountEClass, BANK_ACCOUNT__ACCOUNT_BALANCE);
+		createEReference(bankAccountEClass, BANK_ACCOUNT__OWNER);
+		createEAttribute(bankAccountEClass, BANK_ACCOUNT__CURRENCY);
 
-		inhaberEClass = createEClass(INHABER);
-		createEAttribute(inhaberEClass, INHABER__NAME);
-		createEAttribute(inhaberEClass, INHABER__ANSCHRIFT);
-		createEAttribute(inhaberEClass, INHABER__TELEFONNUMMER);
-		createEReference(inhaberEClass, INHABER__KONTO);
+		ownerEClass = createEClass(OWNER);
+		createEAttribute(ownerEClass, OWNER__NAME);
+		createEAttribute(ownerEClass, OWNER__ADRESS);
+		createEAttribute(ownerEClass, OWNER__PHONE_NUMBER);
+		createEReference(ownerEClass, OWNER__BANK_ACCOUNT);
+
+		exchangeRateAPIEClass = createEClass(EXCHANGE_RATE_API);
+		createEOperation(exchangeRateAPIEClass, EXCHANGE_RATE_API___GET_EXCHANGERATE);
 
 		// Create enums
-		waehrungEEnum = createEEnum(WAEHRUNG);
+		currencyEEnum = createEEnum(CURRENCY);
 	}
 
 	/**
@@ -306,36 +338,43 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(kontoEClass, Konto.class, "Konto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKonto_Iban(), ecorePackage.getEString(), "iban", null, 0, 1, Konto.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKonto_Bic(), ecorePackage.getEString(), "bic", null, 0, 1, Konto.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKonto_Kontostand(), ecorePackage.getEInt(), "kontostand", null, 0, 1, Konto.class,
+		initEClass(bankAccountEClass, BankAccount.class, "BankAccount", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBankAccount_Iban(), ecorePackage.getEString(), "iban", null, 0, 1, BankAccount.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getKonto_Inhaber(), this.getInhaber(), this.getInhaber_Konto(), "inhaber", null, 0, 3,
-				Konto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEAttribute(getBankAccount_Bic(), ecorePackage.getEString(), "bic", null, 0, 1, BankAccount.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBankAccount_AccountBalance(), ecorePackage.getEInt(), "accountBalance", null, 0, 1,
+				BankAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getBankAccount_Owner(), this.getOwner(), this.getOwner_BankAccount(), "owner", null, 0, 3,
+				BankAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKonto_Waehrung(), this.getWaehrung(), "waehrung", null, 0, 1, Konto.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBankAccount_Currency(), this.getCurrency(), "currency", null, 0, 1, BankAccount.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(inhaberEClass, Inhaber.class, "Inhaber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInhaber_Name(), ecorePackage.getEString(), "name", null, 0, 1, Inhaber.class, !IS_TRANSIENT,
+		initEClass(ownerEClass, Owner.class, "Owner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOwner_Name(), ecorePackage.getEString(), "name", null, 0, 1, Owner.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInhaber_Anschrift(), ecorePackage.getEString(), "anschrift", null, 0, 1, Inhaber.class,
+		initEAttribute(getOwner_Adress(), ecorePackage.getEString(), "adress", null, 0, 1, Owner.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOwner_PhoneNumber(), ecorePackage.getEInt(), "phoneNumber", null, 0, 1, Owner.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInhaber_Telefonnummer(), ecorePackage.getEInt(), "telefonnummer", null, 0, 1, Inhaber.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInhaber_Konto(), this.getKonto(), this.getKonto_Inhaber(), "konto", null, 0, -1,
-				Inhaber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getOwner_BankAccount(), this.getBankAccount(), this.getBankAccount_Owner(), "bankAccount", null,
+				0, -1, Owner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(exchangeRateAPIEClass, ExchangeRateAPI.class, "ExchangeRateAPI", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getExchangeRateAPI__Get_exchangerate(), null, "get_exchangerate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(waehrungEEnum, Waehrung.class, "Waehrung");
-		addEEnumLiteral(waehrungEEnum, Waehrung.EURO);
-		addEEnumLiteral(waehrungEEnum, Waehrung.USDOLLAR);
-		addEEnumLiteral(waehrungEEnum, Waehrung.SEK);
-		addEEnumLiteral(waehrungEEnum, Waehrung.NOK);
+		initEEnum(currencyEEnum, Currency.class, "Currency");
+		addEEnumLiteral(currencyEEnum, Currency.EUR);
+		addEEnumLiteral(currencyEEnum, Currency.USD);
+		addEEnumLiteral(currencyEEnum, Currency.SEK);
+		addEEnumLiteral(currencyEEnum, Currency.NOK);
 
 		// Create resource
 		createResource(eNS_URI);
