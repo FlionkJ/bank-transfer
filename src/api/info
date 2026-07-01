@@ -1,0 +1,52 @@
+
+
+
+
+
+// 1. Das gesamte JSON-Objekt für EUR aus der Map herausholen
+JsonObject eurJson = apiSpeicher.get("EUR");
+
+if (eurJson != null) {
+    // 2. Jetzt kannst du tiefer in dieses spezifische JSON eintauchen:
+    String status = eurJson.get("result").getAsString(); // "success"
+    String updateZeit = eurJson.get("time_last_update_utc").getAsString(); // "Wed, 01 Jul 2026..."
+    
+    // Oder direkt an die Kurse ran:
+    JsonObject kurse = eurJson.getAsJsonObject("conversion_rates");
+    double usdKurs = kurse.get("USD").getAsDouble(); // 1.1411
+    
+    System.out.println("Status: " + status);
+    System.out.println("Letztes Update: " + updateZeit);
+    System.out.println("1 EUR sind " + usdKurs + " USD.");
+} else {
+    System.out.println("Keine Daten für EUR im Speicher gefunden.");
+}
+
+
+
+
+
+public class Api {
+
+    private static Environment currentEnv = null; // Startet als null
+    private static Map<Currency, JsonObject> exchangeData;
+
+    public static void init(Environment environment) {
+        currentEnv = environment;
+        // ... deine restliche Init-Logik (z.B. Map initialisieren) ...
+    }
+
+    public static double getExchangeRate(Currency currentCurrency, Currency targetCurrency) {
+        // 🔥 DIE SICHERHEITS-SCHRANKE:
+        if (currentEnv == null) {
+            throw new IllegalStateException(
+                "CRITICAL ERROR: Api.init() was not called! " +
+                "You must initialize the API once at application startup."
+            );
+        }
+
+        // Hier folgt dein normaler Code...
+        JsonObject currencyJsonObject = exchangeData.get(currentCurrency);
+        // ...
+    }
+}
