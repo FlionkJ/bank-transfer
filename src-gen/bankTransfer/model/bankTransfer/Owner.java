@@ -33,7 +33,7 @@ public interface Owner extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getOwner_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -55,7 +55,7 @@ public interface Owner extends EObject {
 	 * @return the value of the '<em>Adress</em>' attribute.
 	 * @see #setAdress(String)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getOwner_Adress()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getAdress();
@@ -77,7 +77,7 @@ public interface Owner extends EObject {
 	 * @return the value of the '<em>Phone Number</em>' attribute.
 	 * @see #setPhoneNumber(int)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getOwner_PhoneNumber()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getPhoneNumber();

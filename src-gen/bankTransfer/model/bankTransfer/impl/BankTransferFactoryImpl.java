@@ -61,8 +61,6 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 			return createBankAccount();
 		case BankTransferPackage.OWNER:
 			return createOwner();
-		case BankTransferPackage.EXCHANGE_RATE_API:
-			return createExchangeRateAPI();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -118,17 +116,6 @@ public class BankTransferFactoryImpl extends EFactoryImpl implements BankTransfe
 	public Owner createOwner() {
 		OwnerImpl owner = new OwnerImpl();
 		return owner;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ExchangeRateAPI createExchangeRateAPI() {
-		ExchangeRateAPIImpl exchangeRateAPI = new ExchangeRateAPIImpl();
-		return exchangeRateAPI;
 	}
 
 	/**

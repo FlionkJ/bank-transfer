@@ -6,7 +6,6 @@ import bankTransfer.model.bankTransfer.BankAccount;
 import bankTransfer.model.bankTransfer.BankTransferFactory;
 import bankTransfer.model.bankTransfer.BankTransferPackage;
 import bankTransfer.model.bankTransfer.Currency;
-import bankTransfer.model.bankTransfer.ExchangeRateAPI;
 import bankTransfer.model.bankTransfer.Owner;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -38,13 +37,6 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	private EClass ownerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass exchangeRateAPIEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -243,26 +235,6 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 	 * @generated
 	 */
 	@Override
-	public EClass getExchangeRateAPI() {
-		return exchangeRateAPIEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getExchangeRateAPI__Get_exchangerate() {
-		return exchangeRateAPIEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getCurrency() {
 		return currencyEEnum;
 	}
@@ -311,9 +283,6 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 		createEAttribute(ownerEClass, OWNER__PHONE_NUMBER);
 		createEReference(ownerEClass, OWNER__BANK_ACCOUNT);
 
-		exchangeRateAPIEClass = createEClass(EXCHANGE_RATE_API);
-		createEOperation(exchangeRateAPIEClass, EXCHANGE_RATE_API___GET_EXCHANGERATE);
-
 		// Create enums
 		currencyEEnum = createEEnum(CURRENCY);
 	}
@@ -351,17 +320,17 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 		// Initialize classes, features, and operations; add parameters
 		initEClass(bankAccountEClass, BankAccount.class, "BankAccount", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBankAccount_Iban(), ecorePackage.getEString(), "iban", null, 0, 1, BankAccount.class,
+		initEAttribute(getBankAccount_Iban(), ecorePackage.getEString(), "iban", null, 1, 1, BankAccount.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBankAccount_Bic(), ecorePackage.getEString(), "bic", null, 1, 1, BankAccount.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBankAccount_Bic(), ecorePackage.getEString(), "bic", null, 0, 1, BankAccount.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBankAccount_AccountBalance(), ecorePackage.getEInt(), "accountBalance", null, 0, 1,
+		initEAttribute(getBankAccount_AccountBalance(), ecorePackage.getEInt(), "accountBalance", "0", 1, 1,
 				BankAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getBankAccount_Owner(), this.getOwner(), this.getOwner_BankAccount(), "owner", null, 0, 3,
 				BankAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBankAccount_Currency(), this.getCurrency(), "currency", null, 0, 1, BankAccount.class,
+		initEAttribute(getBankAccount_Currency(), this.getCurrency(), "currency", null, 1, 1, BankAccount.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getBankAccount__SendMoney__String_int_Currency(), null, "sendMoney", 0, 1,
@@ -371,20 +340,15 @@ public class BankTransferPackageImpl extends EPackageImpl implements BankTransfe
 		addEParameter(op, this.getCurrency(), "currency", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(ownerEClass, Owner.class, "Owner", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOwner_Name(), ecorePackage.getEString(), "name", null, 0, 1, Owner.class, !IS_TRANSIENT,
+		initEAttribute(getOwner_Name(), ecorePackage.getEString(), "name", null, 1, 1, Owner.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOwner_Adress(), ecorePackage.getEString(), "adress", null, 0, 1, Owner.class, !IS_TRANSIENT,
+		initEAttribute(getOwner_Adress(), ecorePackage.getEString(), "adress", null, 1, 1, Owner.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOwner_PhoneNumber(), ecorePackage.getEInt(), "phoneNumber", null, 0, 1, Owner.class,
+		initEAttribute(getOwner_PhoneNumber(), ecorePackage.getEInt(), "phoneNumber", null, 1, 1, Owner.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOwner_BankAccount(), this.getBankAccount(), this.getBankAccount_Owner(), "bankAccount", null,
 				0, -1, Owner.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(exchangeRateAPIEClass, ExchangeRateAPI.class, "ExchangeRateAPI", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
-		initEOperation(getExchangeRateAPI__Get_exchangerate(), null, "get_exchangerate", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(currencyEEnum, Currency.class, "Currency");

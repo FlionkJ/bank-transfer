@@ -40,15 +40,6 @@ public interface BankTransferFactory extends EFactory {
 	Owner createOwner();
 
 	/**
-	 * Returns a new object of class '<em>Exchange Rate API</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exchange Rate API</em>'.
-	 * @generated
-	 */
-	ExchangeRateAPI createExchangeRateAPI();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

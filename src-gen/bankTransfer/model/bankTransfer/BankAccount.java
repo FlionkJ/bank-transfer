@@ -34,7 +34,7 @@ public interface BankAccount extends EObject {
 	 * @return the value of the '<em>Iban</em>' attribute.
 	 * @see #setIban(String)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getBankAccount_Iban()
-	 * @model
+	 * @model id="true" required="true"
 	 * @generated
 	 */
 	String getIban();
@@ -56,7 +56,7 @@ public interface BankAccount extends EObject {
 	 * @return the value of the '<em>Bic</em>' attribute.
 	 * @see #setBic(String)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getBankAccount_Bic()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getBic();
@@ -73,12 +73,13 @@ public interface BankAccount extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Account Balance</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Account Balance</em>' attribute.
 	 * @see #setAccountBalance(int)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getBankAccount_AccountBalance()
-	 * @model
+	 * @model default="0" required="true"
 	 * @generated
 	 */
 	int getAccountBalance();
@@ -116,7 +117,7 @@ public interface BankAccount extends EObject {
 	 * @see bankTransfer.model.bankTransfer.Currency
 	 * @see #setCurrency(Currency)
 	 * @see bankTransfer.model.bankTransfer.BankTransferPackage#getBankAccount_Currency()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Currency getCurrency();

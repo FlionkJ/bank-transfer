@@ -205,43 +205,6 @@ public interface BankTransferPackage extends EPackage {
 	int OWNER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl <em>Exchange Rate API</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl
-	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getExchangeRateAPI()
-	 * @generated
-	 */
-	int EXCHANGE_RATE_API = 2;
-
-	/**
-	 * The number of structural features of the '<em>Exchange Rate API</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXCHANGE_RATE_API_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Get exchangerate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXCHANGE_RATE_API___GET_EXCHANGERATE = 0;
-
-	/**
-	 * The number of operations of the '<em>Exchange Rate API</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXCHANGE_RATE_API_OPERATION_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link bankTransfer.model.bankTransfer.Currency <em>Currency</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,7 +212,7 @@ public interface BankTransferPackage extends EPackage {
 	 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getCurrency()
 	 * @generated
 	 */
-	int CURRENCY = 3;
+	int CURRENCY = 2;
 
 	/**
 	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.BankAccount <em>Bank Account</em>}'.
@@ -379,26 +342,6 @@ public interface BankTransferPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOwner_BankAccount();
-
-	/**
-	 * Returns the meta object for class '{@link bankTransfer.model.bankTransfer.ExchangeRateAPI <em>Exchange Rate API</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Exchange Rate API</em>'.
-	 * @see bankTransfer.model.bankTransfer.ExchangeRateAPI
-	 * @generated
-	 */
-	EClass getExchangeRateAPI();
-
-	/**
-	 * Returns the meta object for the '{@link bankTransfer.model.bankTransfer.ExchangeRateAPI#get_exchangerate() <em>Get exchangerate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get exchangerate</em>' operation.
-	 * @see bankTransfer.model.bankTransfer.ExchangeRateAPI#get_exchangerate()
-	 * @generated
-	 */
-	EOperation getExchangeRateAPI__Get_exchangerate();
 
 	/**
 	 * Returns the meta object for enum '{@link bankTransfer.model.bankTransfer.Currency <em>Currency</em>}'.
@@ -533,24 +476,6 @@ public interface BankTransferPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OWNER__BANK_ACCOUNT = eINSTANCE.getOwner_BankAccount();
-
-		/**
-		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl <em>Exchange Rate API</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see bankTransfer.model.bankTransfer.impl.ExchangeRateAPIImpl
-		 * @see bankTransfer.model.bankTransfer.impl.BankTransferPackageImpl#getExchangeRateAPI()
-		 * @generated
-		 */
-		EClass EXCHANGE_RATE_API = eINSTANCE.getExchangeRateAPI();
-
-		/**
-		 * The meta object literal for the '<em><b>Get exchangerate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXCHANGE_RATE_API___GET_EXCHANGERATE = eINSTANCE.getExchangeRateAPI__Get_exchangerate();
 
 		/**
 		 * The meta object literal for the '{@link bankTransfer.model.bankTransfer.Currency <em>Currency</em>}' enum.

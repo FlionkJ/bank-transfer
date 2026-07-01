@@ -80,13 +80,6 @@ public class BankTransferSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case BankTransferPackage.EXCHANGE_RATE_API: {
-			ExchangeRateAPI exchangeRateAPI = (ExchangeRateAPI) theEObject;
-			T result = caseExchangeRateAPI(exchangeRateAPI);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -119,21 +112,6 @@ public class BankTransferSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOwner(Owner object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Exchange Rate API</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Exchange Rate API</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExchangeRateAPI(ExchangeRateAPI object) {
 		return null;
 	}
 

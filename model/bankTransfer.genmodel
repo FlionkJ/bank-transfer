@@ -34,8 +34,5 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bankTransfer.ecore#//Owner/phoneNumber"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bankTransfer.ecore#//Owner/bankAccount"/>
     </genClasses>
-    <genClasses ecoreClass="bankTransfer.ecore#//ExchangeRateAPI">
-      <genOperations ecoreOperation="bankTransfer.ecore#//ExchangeRateAPI/get_exchangerate"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>
